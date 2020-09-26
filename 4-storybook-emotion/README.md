@@ -5,6 +5,7 @@
 Storybook luckily makes it really easy to get started with a standard installation of React. Storybook installs the dependencies and scaffolds everything for us.
 
 1. npx -p @storybook/cli sb init
+2. yarn add @emotion/core @emotion/styled
 
 # References
 
