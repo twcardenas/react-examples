@@ -15,7 +15,7 @@
   "include": ["./src/**/*"],
   "exclude": [
     // "node_modules",
-    "webpack.dev.ts",
+    "webpack.dev.js",
     "webpack.prod.ts",
     "dist"
     // "*.d.ts",
