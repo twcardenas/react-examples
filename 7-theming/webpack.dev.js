@@ -6,7 +6,6 @@ module.exports = {
   entry: "./src/index.tsx",
   devServer: {
     port: 8080,
-    contentBase: path.join(__dirname, "dist"),
     historyApiFallback: true,
     hot: true,
     inline: true,
@@ -32,7 +31,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "./locales", to: "dest" },
+        { from: "./locales", to: "dist" },
         { from: "./locales", to: "public" },
       ],
     }),
