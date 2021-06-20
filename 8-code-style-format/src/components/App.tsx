@@ -108,8 +108,8 @@ function ChangeLang() {
 
   const changeLanguage = (lng: any) => {
     i18n.changeLanguage(lng)
-    .then(() => console.log('this will succeed'));
-    console.log('test')
+    .then(() => console.log('this will succeed'))
+    .catch(() => 'obligatory catch');
   };
 
   return (
