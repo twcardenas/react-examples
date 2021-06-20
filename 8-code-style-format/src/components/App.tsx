@@ -1,27 +1,25 @@
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+import { css } from "@emotion/core";
+import { useTheme } from "emotion-theming";
+import { Trans, useTranslation, withTranslation } from "react-i18next";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
+  Route,
+  Switch,
   useParams,
-  useRouteMatch,
 } from "react-router-dom";
-import { useTranslation, withTranslation, Trans } from "react-i18next";
-import { useTheme } from "emotion-theming";
+import Footer from "./Footer/Footer";
 import Nav from "./Nav/Nav";
 import NavItem from "./Nav/NavItem";
-import Footer from "./Footer/Footer";
-import { useState } from "react";
 import { Topics } from "./Topics/Topics";
 
 export interface IAppProps {}
 
 export function Topic() {
-  let { topicId } = useParams<any>();
+  const { topicId } = useParams<any>();
   return (
     <div>
       <h3>{topicId} topic</h3>
@@ -77,7 +75,7 @@ export default function App(props: IAppProps) {
 
 // use hoc for class based components
 function LegacyWelcomeClass() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return <h2>{t("title")}</h2>;
 }
 const Welcome = withTranslation()(LegacyWelcomeClass);
@@ -104,12 +102,13 @@ function MyComponent() {
 }
 
 function ChangeLang() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const handleChange = (event: any) => changeLanguage(event.target.value);
 
   const changeLanguage = (lng: any) => {
-    i18n.changeLanguage(lng);
+    i18n.changeLanguage(lng)
+    .then(() => console.log('this will succeed'));
   };
 
   return (

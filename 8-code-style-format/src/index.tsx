@@ -1,9 +1,9 @@
+import { css, Global } from "@emotion/core";
+import { ThemeProvider } from "emotion-theming";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import App from "./components/App";
 import "./i18n";
-import { ThemeProvider } from "emotion-theming";
-import { Global, css } from "@emotion/core";
 
 // loading component for suspense fallback
 const Loader = () => (

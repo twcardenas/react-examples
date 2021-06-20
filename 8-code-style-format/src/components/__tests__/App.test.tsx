@@ -6,7 +6,7 @@ import { Router } from "react-router-dom";
 
 import "@testing-library/jest-dom/extend-expect";
 
-import App, { Topic } from "../App";
+import App from "../App";
 import { Topics } from "../Topics/Topics";
 
 test("landing on a base page", () => {

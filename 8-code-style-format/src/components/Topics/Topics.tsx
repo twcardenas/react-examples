@@ -1,19 +1,17 @@
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core";
+
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useParams,
+  Route,
+  Switch,
   useRouteMatch,
 } from "react-router-dom";
 import { Topic } from "../App";
 
 export function Topics() {
-  let { path, url } = useRouteMatch();
+  const { path, url } = useRouteMatch();
   return (
     <div>
       <div>
